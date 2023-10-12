@@ -16,7 +16,7 @@ def detectFooter(imagePath: str):
     @return: y position of the footer upper boundary
     """
     model = lp.models.Detectron2LayoutModel(
-        "lp://PubLayNet/faster_rcnn_R_50_FPN_3x/config",
+        "lp://PrimaLayout/mask_rcnn_R_50_FPN_3x/config",
         extra_config=["MODEL.ROI_HEADS.SCORE_THRESH_TEST", 0.9],
         label_map={
             1: "TextRegion",
