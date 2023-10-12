@@ -39,7 +39,7 @@ def upload():
         remove(f"uploads/{fileName}")
         remove(f"images/{imagePath}")
 
-    if footer_y_position == -1 or footer_y_position < (height / 2):
+    if footer_y_position == -1:
         response = {"status": "error", "data": "No footer detected"}
         return jsonify(response), 400
     else:
