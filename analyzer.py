@@ -41,10 +41,13 @@ def analyzeLayout(layout, image) -> int:
     thin_blocks = [
         b for b in layout if b.height < 10 and b.width > image.shape[1] * 0.8
     ]
+    for block in thin_blocks:
+        print(block.type)
+
     if len(thin_blocks) == 1:
         block = thin_blocks[0]
         print(block)
-        y1, y2 = block.coordinates[0][1], block.coordinates[2][1]
+        y1, y2 = block.block.y_1, block.block.y_2
         return int((y1 + y2) / 2)
 
     imageHeight = image.shape[0]
