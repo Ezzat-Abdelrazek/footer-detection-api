@@ -47,16 +47,4 @@ def analyzeLayout(layout, image) -> int:
             y1, y2 = block.block.y_1, block.block.y_2
             print(y1, y2)
             return ((y1 + y2) / 2) + 20
-        else:
-            return -1
-
-    imageHeight = image.shape[0]
-
-    bottomInterval = lp.Interval(imageHeight * 0.8, imageHeight, axis="y")
-    layout = layout.filter_by(bottomInterval)
-    layout = layout.sort(key=size_key)
-
-    if layout.__len__() == 0:
-        return -1
-    bottomBlock_y = layout[-1].block.y_1
-    return bottomBlock_y
+    return -1
