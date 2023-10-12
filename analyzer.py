@@ -46,7 +46,7 @@ def analyzeLayout(layout, image) -> int:
             print(block.type)
             y1, y2 = block.block.y_1, block.block.y_2
             print(y1, y2)
-            return (y1 + y2) / 2
+            return ((y1 + y2) / 2) + 20
 
     imageHeight = image.shape[0]
 
