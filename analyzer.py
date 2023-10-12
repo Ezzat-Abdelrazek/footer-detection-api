@@ -39,12 +39,12 @@ def analyzeLayout(layout, image) -> int:
     @return: y position of the footer upper boundary
     """
     thin_blocks = [
-        b for b in layout if b.height < 10 and b.width > image.shape[1] * 0.6
+        b for b in layout if b.height < 20 and b.width > image.shape[1] * 0.6
     ]
     for block in thin_blocks:
         if block.type == "SeparatorRegion":
             y1, y2 = block.block.y_1, block.block.y_2
-            return int((y1 + y2) / 2)
+            return (y1 + y2) / 2
 
     imageHeight = image.shape[0]
 
