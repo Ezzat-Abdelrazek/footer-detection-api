@@ -40,8 +40,8 @@ def analyzeLayout(layout, image) -> int:
     """
     imageHeight = image.shape[0]
 
-    bottomInterval = lp.Interval(imageHeight * 0.8, imageHeight, axis="y")
-    layout = layout.filter_by(bottomInterval)
+    # bottomInterval = lp.Interval(imageHeight * 0.8, imageHeight, axis="y")
+    # layout = layout.filter_by(bottomInterval)
     layout = layout.sort(key=size_key)
 
     if layout.__len__() == 0:
