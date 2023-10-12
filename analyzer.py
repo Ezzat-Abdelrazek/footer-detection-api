@@ -42,6 +42,7 @@ def analyzeLayout(layout, image) -> int:
         b for b in layout if b.height < 20 and b.width > image.shape[1] * 0.6
     ]
     for block in thin_blocks:
+        print(block.type)
         if block.type == "SeparatorRegion":
             y1, y2 = block.block.y_1, block.block.y_2
             return (y1 + y2) / 2
