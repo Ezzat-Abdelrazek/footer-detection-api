@@ -35,7 +35,7 @@ def upload():
 
     if fileName is not None:
         imagePath, height, width = pdfToImages(f"uploads/{fileName}")
-        footer_y_position = math.trunc(int(detectFooter(f"images/{imagePath}")))
+        footer_y_position = math.trunc(detectFooter(f"images/{imagePath}"))
         remove(f"uploads/{fileName}")
         remove(f"images/{imagePath}")
 
