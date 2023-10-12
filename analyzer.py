@@ -15,7 +15,7 @@ def detectFooter(imagePath: str):
     @param imagePath: path to the image to be analyzed
     @return: y position of the footer upper boundary
     """
-    model = lp.models.Detectron2LayoutModel(
+    model = lp.Detectron2LayoutModel(
         "lp://PrimaLayout/mask_rcnn_R_50_FPN_3x/config",
         extra_config=["MODEL.ROI_HEADS.SCORE_THRESH_TEST", 0.9],
         label_map={
@@ -40,7 +40,7 @@ def analyzeLayout(layout, image) -> int:
     """
     imageHeight = image.shape[0]
 
-    bottomInterval = lp.Interval(imageHeight * 0.7, imageHeight, axis="y")
+    bottomInterval = lp.Interval(imageHeight * 1, imageHeight, axis="y")
     layout = layout.filter_by(bottomInterval)
     layout = layout.sort(key=size_key)
 
