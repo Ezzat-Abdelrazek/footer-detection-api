@@ -44,7 +44,7 @@ def analyzeLayout(layout, image) -> int:
     if len(thin_blocks) == 1:
         block = thin_blocks[0]
         y1, y2 = block.coordinates[0][1], block.coordinates[2][1]
-        return (y1 + y2) / 2
+        return int((y1 + y2) / 2)
 
     imageHeight = image.shape[0]
 
