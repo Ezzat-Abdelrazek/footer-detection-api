@@ -27,4 +27,6 @@ def detectFooter(imagePath: str):
         x1, y1, x2, y2 = line[0]
         max_y = max(max_y, y1, y2)
 
+    print(max_y)
+
     return max_y
