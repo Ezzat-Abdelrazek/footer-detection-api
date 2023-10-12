@@ -43,6 +43,7 @@ def analyzeLayout(layout, image) -> int:
     ]
     if len(thin_blocks) == 1:
         block = thin_blocks[0]
+        print(block)
         y1, y2 = block.coordinates[0][1], block.coordinates[2][1]
         return int((y1 + y2) / 2)
 
